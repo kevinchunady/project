@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFaktursTable extends Migration
+class CreateFacturesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,11 +16,11 @@ class CreateFaktursTable extends Migration
         Schema::create('factures', function (Blueprint $table) {
             $table->id();
             #$table->timestamp('faktur_date');
-            $table->enum('facture_status',['Complete','Incomplete']);
+            $table->enum('facture_status', ['Complete', 'Incomplete']);
             $table->text('note');
             $table->timestamps();
 
-            
+
 
             #$table->timestamps();
         });

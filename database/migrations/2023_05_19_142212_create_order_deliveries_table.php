@@ -21,8 +21,8 @@ class CreateOrderDeliveriesTable extends Migration
             $table->double('delivery_price');
             $table->enum('delivery_status',['Not delivered', 'On delivery', 'Success']);
             $table->text('surat_jalan');
-            $table->timestamp('sent_at');
-            $table->timestamp('accepted_at');
+            $table->timestamp('sent_at')->nullable();
+            $table->timestamp('accepted_at')->nullable();
 
             $table->foreign('order_id')->references('id')->on('orders');
             $table->foreign('address_id')->references('id')->on('client_addresses');
