@@ -19,12 +19,11 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('client_id');
             $table->unsignedBigInteger('invoice_id');
             $table->unsignedBigInteger('kwitansi_id');
-            $table->unsignedBigInteger('facture_id');
+            $table->unsignedBigInteger('faktur_id');
             $table->unsignedBigInteger('pelunasan_id');
             $table->double('total_price');
             $table->enum('status',['Complete','Incomplete']);
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamps();
             #$table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

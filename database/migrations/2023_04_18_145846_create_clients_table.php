@@ -22,9 +22,9 @@ class CreateClientsTable extends Migration
             $table->string('npwp');
             $table->string('top');
             $table->unsignedBigInteger('type_id');
-            $table->timestamp('created_at');
-            $table->timestamp('deleted_at');
-            #$table->timestamps();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
 
             $table->foreign('type_id')->references('id')->on('client_types');
         });
