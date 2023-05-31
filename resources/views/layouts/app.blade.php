@@ -18,7 +18,7 @@
         <div class="min-h-screen bg-white flex">
             <!-- Page Content -->
             @include('layouts.sidebar')
-            <main class="w-full">
+            <main class="w-4/5">
                 @yield('content')
             </main>
         </div>

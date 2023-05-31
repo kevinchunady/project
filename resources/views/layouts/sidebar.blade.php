@@ -35,7 +35,7 @@
         </div>
     </div>
     <a href="#" class="mx-10 my-9">
-        <button class="flex flex-row p-2 items-center bg-cred1 rounded-full space-x-2 hover:bg-cred2 transition-all duration-300 ease-in-out shadow-md shadow-red-400">
+        <button class="flex flex-row py-2 px-6 items-center bg-cred1 rounded-full space-x-2 hover:bg-cred2 transition-all duration-300 ease-in-out shadow-md shadow-red-400">
             <img src="{{ asset('images/logout-logo.png') }}" alt="Logout Icon" class="bg-white rounded-full px-1 py-1">
             <h2 class="text-white font-normal text-base">Log Out</h2>
         </button>

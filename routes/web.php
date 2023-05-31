@@ -21,4 +21,16 @@ Route::get('/report', function () {
     return view('report');
 });
 
+Route::get('/products', function () {
+    return view('products');
+});
+
+Route::get('/customers', function () {
+    return view('customers');
+});
+
+Route::get('/users', function () {
+    return view('users');
+});
+
 require __DIR__.'/auth.php';

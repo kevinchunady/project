@@ -1,95 +1,87 @@
 @extends('layouts.app')
 
 @section('content')
-
-@include('layouts.header', ['string' => 'Add Product'])
-
-<table class="w-full">
-    {{-- THead --}}
-    <div class="flex flex-row bg-clightblue w-full items-end text-cdarkblue text-xs font-semibold uppercase">
-        <div class="flex flex-col py-2 px-3 w-32 items-center border border-r-black border-t-0 border-b-0 h-full space-y-6">
-            <div>
-                <h2 class="opacity-0">Hidden</h2>
-            </div>
-            <div>
-                <h2>ID</h2>
-            </div>
-        </div>
-        <div class="flex flex-col py-2 px-3 w-32 items-center h-full">
-            <div></div>
-            <div>
-                <h2>Kam</h2>
-            </div>
-        </div>
-        <div class="flex flex-col py-2 px-3 w-40 items-center border border-r-black border-t-0 border-b-0 border-l-black h-full space-y-6">
-            <div>
-                <h2>Entry</h2>
-            </div>
-            <div class="flex flex-row justify-between w-full">
-                <h2>Date</h2>
-                <h2>Time</h2>
-            </div>
-        </div>
-        <div class="flex flex-col py-2 px-3 w-96 items-center border border-r-black border-t-0 border-b-0 border-l-0 h-full space-y-6">
-            <div>
-                <h2>Purchase Order</h2>
-            </div>
-            <div class="flex flex-row justify-between w-full">
-                <h2>Items</h2>
-                <h2>Purchase Number</h2>
-                <h2>PO Date</h2>
-            </div>
-        </div>
-        <div class="flex flex-col py-2 px-3 w-32 items-center h-full">
-            <div></div>
-            <div>
-                <h2>Actions</h2>
-            </div>
-        </div>
+    @include('layouts.header', ['string' => 'Add Order'])
+    <div class="overflow-x-scroll">
+        <table class="w-full table-auto">
+            {{-- THead --}}
+            <thead class="bg-clightblue items-end text-cdarkblue text-xs font-semibold uppercase">
+                <tr>
+                    <th class="py-2 px-3 border border-r-black border-t-0 border-l-0 border-b-0"></th>
+                    <th class="py-2 px-3 border border-r-black border-t-0 border-l-0 border-b-0"></th>
+                    <th colspan="2" class="py-2 px-3 border border-r-black border-t-0 border-l-0 border-b-0">Entry</th>
+                    <th colspan="3" class="py-2 px-3 border border-r-black border-t-0 border-l-0 border-b-0">Purchase Order</th>
+                    <th colspan="5" class="py-2 px-3 border border-r-black border-t-0 border-l-0 border-b-0">Invoicing</th>
+                    <th colspan="4" class="py-2 px-3 border border-r-black border-t-0 border-l-0 border-b-0">Delivery</th>
+                    <th class="py-2 px-3 border border-r-black border-t-0 border-l-0 border-b-0"></th>
+                </tr>
+                <tr>
+                    <th class="py-2 px-3 items-center border border-r-black border-t-0 border-l-0 border-b-0">ID</th>
+                    <th class="py-2 px-3 items-center border border-r-black border-t-0 border-l-0 border-b-0">Kam</th>
+                    <th class="py-2 px-3 items-center">Date</th>
+                    <th class="py-2 px-3 items-center border border-r-black border-t-0 border-l-0 border-b-0">Time</th>
+                    <th class="py-2 px-3 items-center">Items</th>
+                    <th class="py-2 px-3 items-center">Purchase Number</th>
+                    <th class="py-2 px-3 items-center border border-r-black border-t-0 border-l-0 border-b-0">PO Date</th>
+                    <th class="py-2 px-3 items-center">Invoice Number</th>
+                    <th class="py-2 px-3 items-center">Invoice File</th>
+                    <th class="py-2 px-3 items-center">Invoice File</th>
+                    <th class="py-2 px-3 items-center">Invoice Amount</th>
+                    <th class="py-2 px-3 items-center border border-r-black border-t-0 border-l-0 border-b-0">TOP</th>
+                    <th class="py-2 px-3 items-center">Delivery Sent Date</th>
+                    <th class="py-2 px-3 items-center">Delivery Received Date</th>
+                    <th class="py-2 px-3 items-center">Delivery Status</th>
+                    <th class="py-2 px-3 items-center border border-r-black border-t-0 border-l-0 border-b-0">Delivery Price</th>
+                    <th class="py-2 px-3 items-center border border-r-black border-t-0 border-l-0 border-b-0">Action</th>
+                </tr>
+            </thead>
+            {{-- End of Thead --}}
+            {{-- Start of TR --}}
+            <tbody class="text-sm text-center">
+                <tr>
+                    <td class="py-4">0001</td>
+                    <td>Ann Chulhane Wijaya</td>
+                    <td>16-Mar-23</td>
+                    <td>17:30</td>
+                    <td><img src="{{ asset('images/items-table-logo.png') }}" alt="Items Table Logo" class="w-3 h-4 mx-auto"></td>
+                    <td>CANDY/12/2022/2368</td>
+                    <td>15/03/2023</td>
+                    <td>SM-0363/MAR/23</td>
+                    <td><img src="{{ asset('images/file-logo.png') }}" alt="File Logo" class="w-3 h-4 mx-auto"></td>
+                    <td>21-Mar-23</td>
+                    <td>Rp 238.161.600</td>
+                    <td>7 <span class="text-gray-300">DAY(S)</span></td>
+                    <td>22-Mar-23</td>
+                    <td>27-Mar-23</td>
+                    <td>Success</td>
+                    <td>Rp 50.000</td>
+                    <td>
+                        <a href="#">
+                            <img src="{{ asset('images/edit-logo.png') }}" alt="Edit Logo" class="w-5 h-5 mx-auto">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="py-4">0001</td>
+                    <td>Ann Chulhane Wijaya</td>
+                    <td>16-Mar-23</td>
+                    <td>17:30</td>
+                    <td><img src="{{ asset('images/items-table-logo.png') }}" alt="Items Table Logo" class="w-3 h-4 mx-auto"></td>
+                    <td>CANDY/12/2022/2368</td>
+                    <td>15/03/2023</td>
+                    <td>SM-0363/MAR/23</td>
+                    <td><img src="{{ asset('images/file-logo.png') }}" alt="File Logo" class="w-3 h-4 mx-auto"></td>
+                    <td>21-Mar-23</td>
+                    <td>Rp 238.161.600</td>
+                    <td>7 <span class="text-gray-300">DAY(S)</span></td>
+                    <td>
+                        <a href="#">
+                            <img src="{{ asset('images/edit-logo.png') }}" alt="Edit Logo" class="w-5 h-5 mx-auto">
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+            {{-- End of TR --}}
+        </table>
     </div>
-    {{-- End of Thead --}}
-    {{-- Start of TR --}}
-    <div class="flex flex-row w-full items-center pt-3 text-sm">
-        <div class="px-3 w-32 text-center">
-            <h2 class="font-medium">0001</h2>
-        </div>
-        <div class="px-3 w-32 text-start">
-            <h2 class="font-medium">Ann Culhane Wijaya</h2>
-        </div>
-        <div class="px-3 w-40 flex flex-row font-normal justify-between">
-            <h2>16-Mar-23</h2>
-            <h2 class="text-end">17:30</h2>
-        </div>
-        <div class="px-3 w-96 flex flex-row font-normal justify-between">
-            <img src="{{ asset('images/items-table-logo.png') }}" alt="Items Table Logo" class="w-3 h-4">
-            <h2>CANDY/12/2022/2368</h2>
-            <h2>15/03/2023</h2>
-        </div>
-        <a href="#" class="py-2 px-3 w-32 items-center flex flex-col">
-            <img src="{{ asset('images/edit-logo.png') }}" alt="Edit Logo" class="w-5 h-5">
-        </a>
-    </div>
-    <div class="flex flex-row w-full items-center pt-3 text-sm bg-clightblue2">
-        <div class="px-3 w-32 text-center">
-            <h2 class="font-medium">0001</h2>
-        </div>
-        <div class="px-3 w-32 text-start">
-            <h2 class="font-medium">Ann Culhane Wijaya</h2>
-        </div>
-        <div class="px-3 w-40 flex flex-row font-normal justify-between">
-            <h2>16-Mar-23</h2>
-            <h2 class="text-end">17:30</h2>
-        </div>
-        <div class="px-3 w-96 flex flex-row font-normal justify-between">
-            <img src="{{ asset('images/items-table-logo.png') }}" alt="Items Table Logo" class="w-3 h-4">
-            <h2>CANDY/12/2022/2368</h2>
-            <h2>15/03/2023</h2>
-        </div>
-        <a href="#" class="py-2 px-3 w-32 items-center flex flex-col">
-            <img src="{{ asset('images/edit-logo.png') }}" alt="Edit Logo" class="w-5 h-5">
-        </a>
-    </div>
-    {{-- End of TR --}}
-</table>
-
 @endsection
