@@ -42,9 +42,11 @@ Route::prefix('insertion/')->group(function(){
     Route::get('/add-product', function () {
         return view('insertion.add-product');
     })->name('add-product');
+    Route::post('/add-product', [ProductController::class, 'create']);
     Route::get('/add-customer', function () {
         return view('insertion.add-customer');
     })->name('add-customer');
+    Route::post('/add-customer', [CustomerController::class, 'create']);
     Route::get('/add-user', function () {
         return view('insertion.add-user');
     })->name('add-user');

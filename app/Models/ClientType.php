@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class ClientType extends Model
 {
     use HasFactory;
+
+    protected $table = 'client_types';
+    public $timestamps = false;
+
+    protected $fillable = [
+        'name'
+    ];
 }

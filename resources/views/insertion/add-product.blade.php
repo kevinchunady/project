@@ -9,7 +9,7 @@
 @endsection
 
 @section('form')
-    <form action="#" method="POST" class="mt-14" id="myForm" enctype="multipart/form-data">
+    <form action="/insertion/add-product" method="POST" class="mt-14" id="myForm" enctype="multipart/form-data">
         @csrf
         <x-insertion-form>
             <x-slot name="left_side">
