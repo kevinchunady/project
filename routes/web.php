@@ -33,4 +33,28 @@ Route::get('/users', function () {
     return view('users');
 });
 
+Route::prefix('insertion/')->group(function(){
+    Route::get('/add-order', function () {
+        return view('insertion.add-order');
+    });
+    Route::get('/sales-order', function () {
+        return view('insertion.sales-order');
+    });
+    Route::get('/delivery-order', function () {
+        return view('insertion.delivery-order');
+    });
+    Route::get('/accounting', function () {
+        return view('insertion.accounting');
+    });
+    Route::get('/add-product', function () {
+        return view('insertion.add-product');
+    });
+    Route::get('/add-customer', function () {
+        return view('insertion.add-customer');
+    });
+    Route::get('/add-user', function () {
+        return view('insertion.add-user');
+    });
+});
+
 require __DIR__.'/auth.php';

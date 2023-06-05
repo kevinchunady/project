@@ -31,7 +31,10 @@ module.exports = {
                 clightblue: "#F4F7FCBF",
                 cblue: "#2264E5",
                 cdarkblue: "#464F60",
-                clightblue2: "#F9FAFC"
+                clightblue2: "#F9FAFC",
+                cyellow2: "#FFC529",
+                cgreen3: "#039300",
+                cgray2: "#F0F1FA",
             }
         },
     },
