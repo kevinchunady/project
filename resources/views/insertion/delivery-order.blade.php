@@ -1,9 +1,7 @@
 @extends('layouts.insertion')
 
 @section('back-button')
-    <a href="#">
-        @include('components.back-button')
-    </a>
+    @include('components.back-button')
 @endsection
 
 @section('header-title')
@@ -35,14 +33,16 @@
             <x-slot name="right_side">
                 <div class="space-y-2 flex-col">
                     <label for="Delivery Received Date">Delivery Received Date: </label>
-                    <input type="date" name="received_date" class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5" required>
+                    <input type="date" name="received_date"
+                        class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5" required>
                     @error('received_date')
                         @include('components.form-error-message', ['message' => $message])
                     @enderror
                 </div>
                 <div class="space-y-2 flex-col">
                     <label for="Delivery Price">Delivery Price: </label>
-                    <input type="number" name="price" class="w-full px-4 h-16 rounded-lg shadow-lg border-none" min="1" placeholder="Rp. " required>
+                    <input type="number" name="price" class="w-full px-4 h-16 rounded-lg shadow-lg border-none"
+                        min="1" placeholder="Rp. " required>
                     @error('price')
                         @include('components.form-error-message', ['message' => $message])
                     @enderror

@@ -1,9 +1,7 @@
 @extends('layouts.insertion')
 
 @section('back-button')
-    <a href="#">
-        @include('components.back-button')
-    </a>
+    @include('components.back-button')
 @endsection
 
 @section('header-title')
@@ -17,14 +15,16 @@
             <x-slot name="left_side">
                 <div class="space-y-2 flex flex-col">
                     <label for="Invoice Number">Invoice Number </label>
-                    <input type="text" name="invoice_number" class="w-full px-4 h-16 rounded-lg shadow-lg border-none" required>
+                    <input type="text" name="invoice_number" class="w-full px-4 h-16 rounded-lg shadow-lg border-none"
+                        required>
                     @error('invoice_number')
                         @include('components.form-error-message', ['message' => $message])
                     @enderror
                 </div>
                 <div class="space-y-2 flex flex-col">
                     <label for="Invoice Date">Invoice Date: </label>
-                    <input type="date" name="invoice_date" class="w-full px-4 h-16 rounded-lg shadow-lg border-none" required>
+                    <input type="date" name="invoice_date" class="w-full px-4 h-16 rounded-lg shadow-lg border-none"
+                        required>
                     @error('invoice_date')
                         @include('components.form-error-message', ['message' => $message])
                     @enderror
@@ -33,14 +33,16 @@
             <x-slot name="right_side">
                 <div class="space-y-2 flex-col">
                     <label for="Invoice File">Invoice File: </label>
-                    <input type="file" name="invoice_file" class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5" required>
+                    <input type="file" name="invoice_file" class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5"
+                        required>
                     @error('invoice_file')
                         @include('components.form-error-message', ['message' => $message])
                     @enderror
                 </div>
                 <div class="space-y-2 flex-col">
                     <label for="Invoice Amount">Invoice Amount: </label>
-                    <input type="number" name="invoice_amount" class="w-full px-4 h-16 rounded-lg shadow-lg border-none" min="1" placeholder="Rp. " required>
+                    <input type="number" name="invoice_amount" class="w-full px-4 h-16 rounded-lg shadow-lg border-none"
+                        min="1" placeholder="Rp. " required>
                     @error('invoice_amount')
                         @include('components.form-error-message', ['message' => $message])
                     @enderror

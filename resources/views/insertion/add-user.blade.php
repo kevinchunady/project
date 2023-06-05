@@ -1,9 +1,7 @@
 @extends('layouts.insertion')
 
 @section('back-button')
-    <a href="#">
-        @include('components.back-button')
-    </a>
+    @include('components.back-button')
 @endsection
 
 @section('header-title')
@@ -24,7 +22,8 @@
                 </div>
                 <div class="space-y-2 flex flex-col">
                     <label for="User Password">User Password: </label>
-                    <input type="password" name="user_password" class="w-full px-4 h-16 rounded-lg shadow-lg border-none" required>
+                    <input type="password" name="user_password" class="w-full px-4 h-16 rounded-lg shadow-lg border-none"
+                        required>
                     @error('user_password')
                         @include('components.form-error-message', ['message' => $message])
                     @enderror
@@ -33,7 +32,8 @@
             <x-slot name="right_side">
                 <div class="space-y-2 flex-col">
                     <label for="User Email">User Email: </label>
-                    <input type="email" name="user_email" class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5" required>
+                    <input type="email" name="user_email" class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5"
+                        required>
                     @error('user_email')
                         @include('components.form-error-message', ['message' => $message])
                     @enderror

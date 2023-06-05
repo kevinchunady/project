@@ -1,9 +1,7 @@
 @extends('layouts.insertion')
 
 @section('back-button')
-    <a href="#">
-        @include('components.back-button')
-    </a>
+    @include('components.back-button')
 @endsection
 
 @section('header-title')
@@ -17,7 +15,8 @@
             <x-slot name="left_side">
                 <div class="space-y-2 flex flex-col">
                     <label for="Receipt Date:">Receipt Date: </label>
-                    <input type="date" name="receipt_date" class="w-full px-4 h-16 rounded-lg shadow-lg border-none" required>
+                    <input type="date" name="receipt_date" class="w-full px-4 h-16 rounded-lg shadow-lg border-none"
+                        required>
                     @error('receipt_date')
                         @include('components.form-error-message', ['message' => $message])
                     @enderror
@@ -35,7 +34,8 @@
             <x-slot name="right_side">
                 <div class="space-y-2 flex-col">
                     <label for="Receipt Amount">Receipt Amount: </label>
-                    <input type="number" name="receipt_amount" min="1" class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5" placeholder="Rp. " required>
+                    <input type="number" name="receipt_amount" min="1"
+                        class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5" placeholder="Rp. " required>
                     @error('receipt_amount')
                         @include('components.form-error-message', ['message' => $message])
                     @enderror

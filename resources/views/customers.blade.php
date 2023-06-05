@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('layouts.header', ['string' => 'Add Customer'])
+    @include('layouts.header', ['link' => 'add-customer', 'string' => 'Add Customer'])
 
     <x-table>
         <x-slot name="header">
@@ -9,7 +9,8 @@
                 <th class="py-2 px-20 items-center border border-r-black border-t-0 border-l-0 border-b-0">Customer ID</th>
                 <th class="py-2 px-20 items-center border border-r-black border-t-0 border-l-0 border-b-0">Customer Name</th>
                 <th class="py-2 px-20 items-center border border-r-black border-t-0 border-l-0 border-b-0">NPWP</th>
-                <th class="py-2 px-20 items-center border border-r-black border-t-0 border-l-0 border-b-0">Customer Address</th>
+                <th class="py-2 px-20 items-center border border-r-black border-t-0 border-l-0 border-b-0">Customer Address
+                </th>
                 <th class="py-2 px-20 items-center border border-r-black border-t-0 border-l-0 border-b-0">Phone Number</th>
                 <th class="py-2 px-20 items-center border border-r-black border-t-0 border-l-0 border-b-0">Customer Type</th>
                 <th class="py-2 px-20 items-center border border-r-black border-t-0 border-l-0 border-b-0">TOP</th>
@@ -57,5 +58,4 @@
             </tr>
         </x-slot>
     </x-table>
-
 @endsection

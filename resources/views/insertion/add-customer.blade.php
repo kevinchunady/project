@@ -1,9 +1,7 @@
 @extends('layouts.insertion')
 
 @section('back-button')
-    <a href="#">
-        @include('components.back-button')
-    </a>
+    @include('components.back-button')
 @endsection
 
 @section('header-title')
@@ -17,7 +15,8 @@
             <x-slot name="left_side">
                 <div class="space-y-2 flex flex-col">
                     <label for="Customer Name:">Customer Name: </label>
-                    <input type="text" name="customer_name" class="w-full px-4 h-16 rounded-lg shadow-lg border-none" required>
+                    <input type="text" name="customer_name" class="w-full px-4 h-16 rounded-lg shadow-lg border-none"
+                        required>
                     @error('customer_name')
                         @include('components.form-error-message', ['message' => $message])
                     @enderror
@@ -42,21 +41,24 @@
             <x-slot name="right_side">
                 <div class="space-y-2 flex-col">
                     <label for="Customer NPWP">Customer NPWP: </label>
-                    <input type="text" name="customer_npwp" class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5" required>
+                    <input type="text" name="customer_npwp"
+                        class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5" required>
                     @error('customer_npwp')
                         @include('components.form-error-message', ['message' => $message])
                     @enderror
                 </div>
                 <div class="space-y-2 flex flex-col">
                     <label for="Phone Number">Phone Number: </label>
-                    <input type="tel" name="phone_number" class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5" placeholder="+62" required>
+                    <input type="tel" name="phone_number" class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5"
+                        placeholder="+62" required>
                     @error('phone_number')
                         @include('components.form-error-message', ['message' => $message])
                     @enderror
                 </div>
                 <div class="space-y-2 flex-col">
                     <label for="TOP">TOP: </label>
-                    <input type="number" name="customer_top" min="1" class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5" placeholder="DAY(S)" required>
+                    <input type="number" name="customer_top" min="1"
+                        class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5" placeholder="DAY(S)" required>
                     @error('customer_top')
                         @include('components.form-error-message', ['message' => $message])
                     @enderror

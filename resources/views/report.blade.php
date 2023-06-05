@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('layouts.header', ['string' => 'Add Order'])
+    @include('layouts.header', ['link' => 'add-order' ,'string' => 'Add Order'])
 
     <x-table>
         <x-slot name="header">

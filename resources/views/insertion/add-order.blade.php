@@ -1,9 +1,7 @@
 @extends('layouts.insertion')
 
 @section('back-button')
-    <a href="#">
-        @include('components.back-button')
-    </a>
+    @include('components.back-button')
 @endsection
 
 @section('header-title')
@@ -52,7 +50,8 @@
             <x-slot name="right_side">
                 <div class="space-y-2 flex-col">
                     <label for="Purchase Number">Purchase Number: </label>
-                    <input type="text" name="purchase_number" class="w-full px-4 h-16 rounded-lg shadow-lg border-none" required>
+                    <input type="text" name="purchase_number" class="w-full px-4 h-16 rounded-lg shadow-lg border-none"
+                        required>
                     @error('purchase_number')
                         @include('components.form-error-message', ['message' => $message])
                     @enderror

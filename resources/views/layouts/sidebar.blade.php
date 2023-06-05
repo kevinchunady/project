@@ -7,26 +7,26 @@
             <h1 class="font-semibold text-xl">Farion Wick</h1>
             <h2 class="font-normal text-sm">farionwick@gmail.com</h2>
         </div>
-        <div class="mt-12 flex flex-col space-y-3 w-full">
-            <a class="hover:bg-ccream transition-all duration-300 ease-in-out py-2" href="/report">
+        <div class="mt-12 flex flex-col space-y-1 w-full">
+            <a class="{{ Route::is('reports') ? 'bg-ccream transition-all duration-300 ease-in-out py-4' : 'hover:bg-ccream transition-all duration-300 ease-in-out py-4'}}" href="{{ route('reports') }}">
                 <button class="pl-10 flex flex-row items-center space-x-3 ">
                     <img src="{{ asset('images/report-logo.png') }}" alt="Report Logo" class="w-4 h-5">
                     <h2 class="font-normal text-base">Report</h2>
                 </button>
             </a>
-            <a class="hover:bg-ccream transition-all duration-300 ease-in-out py-2" href="/products">
+            <a class="{{ Route::is('products', 'add-product') ? 'bg-ccream transition-all duration-300 ease-in-out py-4' : 'hover:bg-ccream transition-all duration-300 ease-in-out py-4' }}" href="{{ route('products') }}">
                 <button class="pl-10 flex flex-row items-center space-x-3 ">
                     <img src="{{ asset('images/products-logo.png') }}" alt="Product Logo" class="w-4 h-5">
                     <h2 class="font-normal text-base">Product</h2>
                 </button>
             </a>
-            <a class="hover:bg-ccream transition-all duration-300 ease-in-out py-2" href="/customers">
+            <a class="{{ Route::is('customers', 'add-customer') ? 'bg-ccream transition-all duration-300 ease-in-out py-4' : 'hover:bg-ccream transition-all duration-300 ease-in-out py-4' }}" href="{{ route('customers') }}">
                 <button class="pl-10 flex flex-row items-center space-x-3 ">
                     <img src="{{ asset('images/customers-logo.png') }}" alt="Customers Logo" class="w-4 h-5">
                     <h2 class="font-normal text-base">Customers</h2>
                 </button>
             </a>
-            <a class="hover:bg-ccream transition-all duration-300 ease-in-out py-2" href="/users">
+            <a class="{{ Route::is('users', 'add-user') ? 'bg-ccream transition-all duration-300 ease-in-out py-4' : 'hover:bg-ccream transition-all duration-300 ease-in-out py-4' }}" href="{{ route('users') }}">
                 <button class="pl-10 flex flex-row items-center space-x-3 ">
                     <img src="{{ asset('images/users-logo.png') }}" alt="Users Logo" class="w-4 h-5">
                     <h2 class="font-normal text-base">Users</h2>

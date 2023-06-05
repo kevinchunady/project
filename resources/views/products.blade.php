@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('layouts.header', ['string' => 'Add Product'])
+    @include('layouts.header', ['link' => 'add-product', 'string' => 'Add Product'])
 
     <x-table>
         <x-slot name="header">

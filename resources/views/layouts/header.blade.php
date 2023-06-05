@@ -12,6 +12,8 @@
         </div>
     </div>
     <div>
-        @include('components.add-button', ['string' => $string])
+        <a href="{{ route($link) }}">
+            @include('components.add-button', ['string' => $string])
+        </a>
     </div>
 </div>
