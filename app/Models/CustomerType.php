@@ -5,11 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ClientType extends Model
+class CustomerType extends Model
 {
     use HasFactory;
-
-    protected $table = 'client_types';
+    protected $table = 'customer_types';
     public $timestamps = false;
 
     protected $fillable = [

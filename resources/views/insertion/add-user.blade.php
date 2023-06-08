@@ -41,7 +41,9 @@
                 <div class="space-y-2 flex-col">
                     <label for="User Role">User Role: </label>
                     <select name="role_id" class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5" required>
-                        <option value="Placeholder">Placeholder</option>
+                        @foreach ($roles as $role)
+                            <option value="{{ $role->id }}">{{ $role->name }}</option>
+                        @endforeach
                     </select>
                     @error('role_id')
                         @include('components.form-error-message', ['message' => $message])

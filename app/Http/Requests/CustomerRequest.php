@@ -24,12 +24,16 @@ class CustomerRequest extends FormRequest
     public function rules()
     {
         return [
-            'customer_name' => ['required', 'string'],
-            'address' => ['required', 'string'],
-            'customer_type' => ['required', 'exists:customer_types'],
+            'trade_name' => ['required', 'string'],
+            'outlet_name' => ['required', 'string', 'unique:customers,outlet_name'],
+            'customer_type' => ['required', 'exists:customer_types,id'],
             'customer_npwp' => ['required', 'string'],
-            'phone_number' => ['required', 'regex:/^(\+?\d{1,3}[-.])?\(?\d{3}\)?[-.]?\d{3}[-.]?\d{4}$/'],
-            'customer_top' => ['required', 'numeric', 'min:1']
+            'phone_number' => ['required'],
+            'customer_top' => ['required', 'numeric', 'min:1'],
+            'street_name' => ['required', 'string'],
+            'city' => ['required', 'string'],
+            'province' => ['required', 'string'],
+            'postal_code' => ['required', 'numeric', 'min: 1']
         ];
     }
 }

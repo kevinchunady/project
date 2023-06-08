@@ -6,18 +6,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Client extends Model
+class Customer extends Model
 {
     use HasFactory;
-
-    protected $table = 'clients';
+    protected $table = 'customers';
 
     protected $fillable = [
-        'name',
+        'trade_name',
+        'outlet_name',
         'npwp',
         'type_id',
         'top',
-        'phone'
+        'phone_number'
     ];
 
     /**
@@ -27,6 +27,16 @@ class Client extends Model
      */
     public function type(): HasOne
     {
-        return $this->hasOne(ClientType::class, 'id', 'type_id');
+        return $this->hasOne(CustomerType::class, 'id', 'type_id');
+    }
+
+    /**
+     * Get the address associated with the Customer
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function address(): HasOne
+    {
+        return $this->hasOne(CustomerAddress::class, 'customer_id', 'id');
     }
 }

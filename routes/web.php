@@ -43,13 +43,10 @@ Route::prefix('insertion/')->group(function(){
         return view('insertion.add-product');
     })->name('add-product');
     Route::post('/add-product', [ProductController::class, 'create']);
-    Route::get('/add-customer', function () {
-        return view('insertion.add-customer');
-    })->name('add-customer');
-    Route::post('/add-customer', [CustomerController::class, 'create']);
-    Route::get('/add-user', function () {
-        return view('insertion.add-user');
-    })->name('add-user');
+    Route::get('/add-customer', [CustomerController::class, 'create'])->name('add-customer');
+    Route::post('/add-customer', [CustomerController::class, 'store']);
+    Route::get('/add-user', [UserController::class, 'create'])->name('add-user');
+    Route::post('/add-user', [UserController::class, 'store']);
 });
 
 require __DIR__.'/auth.php';

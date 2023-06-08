@@ -9,36 +9,63 @@
 @endsection
 
 @section('form')
-    <form action="#" method="POST" class="mt-14" id="myForm">
+    <form action="/insertion/add-customer" method="POST" class="mt-14" id="myForm">
         @csrf
         <x-insertion-form>
             <x-slot name="left_side">
                 <div class="space-y-2 flex flex-col">
-                    <label for="Customer Name:">Customer Name: </label>
-                    <input type="text" name="customer_name" class="w-full px-4 h-16 rounded-lg shadow-lg border-none"
+                    <label for="Trade Name:">Trade Name: </label>
+                    <input type="text" name="trade_name" class="w-full px-4 h-16 rounded-lg shadow-lg border-none"
                         required>
-                    @error('customer_name')
-                        @include('components.form-error-message', ['message' => $message])
-                    @enderror
-                </div>
-                <div class="space-y-2 flex flex-col">
-                    <label for="Customer Address">Customer Address: </label>
-                    <input type="text" name="address" class="w-full px-4 h-16 rounded-lg shadow-lg border-none" required>
-                    @error('address')
+                    @error('trade_name')
                         @include('components.form-error-message', ['message' => $message])
                     @enderror
                 </div>
                 <div class="space-y-2 flex flex-col">
                     <label for="Customer Type">Customer Type: </label>
                     <select name="customer_type" class="w-full px-4 h-16 rounded-lg shadow-lg border-none" required>
-                        <option value="placeholder" selected>Placeholder</option>
+                        @foreach ($types as $type)
+                            <option value="{{ $type->id }}">{{ $type->name }}</option>
+                        @endforeach
                     </select>
                     @error('customer_type')
                         @include('components.form-error-message', ['message' => $message])
                     @enderror
                 </div>
+                <div class="space-y-2 flex-col">
+                    <label for="TOP">TOP: </label>
+                    <input type="number" name="customer_top" min="1"
+                        class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5" placeholder="DAY(S)" required>
+                    @error('customer_top')
+                        @include('components.form-error-message', ['message' => $message])
+                    @enderror
+                </div>
+                <div class="space-y-2 flex-col">
+                    <label for="Street Name">Street Name: </label>
+                    <input type="text" name="street_name"
+                        class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5" required>
+                    @error('street_name')
+                        @include('components.form-error-message', ['message' => $message])
+                    @enderror
+                </div>
+                <div class="space-y-2 flex-col">
+                    <label for="City">City: </label>
+                    <input type="text" name="city" min="1"
+                        class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5" placeholder="Jakarta Selatan" required>
+                    @error('city')
+                        @include('components.form-error-message', ['message' => $message])
+                    @enderror
+                </div>
             </x-slot>
             <x-slot name="right_side">
+                <div class="space-y-2 flex flex-col">
+                    <label for="Outlet Name:">Outlet Name: </label>
+                    <input type="text" name="outlet_name" class="w-full px-4 h-16 rounded-lg shadow-lg border-none"
+                        required>
+                    @error('outlet_name')
+                        @include('components.form-error-message', ['message' => $message])
+                    @enderror
+                </div>
                 <div class="space-y-2 flex-col">
                     <label for="Customer NPWP">Customer NPWP: </label>
                     <input type="text" name="customer_npwp"
@@ -54,12 +81,19 @@
                     @error('phone_number')
                         @include('components.form-error-message', ['message' => $message])
                     @enderror
+                <div class="space-y-2 flex-col">
+                    <label for="Province">Province: </label>
+                    <input type="text" name="province" min="1"
+                        class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5" placeholder="DKI Jakarta" required>
+                    @error('province')
+                        @include('components.form-error-message', ['message' => $message])
+                    @enderror
                 </div>
                 <div class="space-y-2 flex-col">
-                    <label for="TOP">TOP: </label>
-                    <input type="number" name="customer_top" min="1"
-                        class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5" placeholder="DAY(S)" required>
-                    @error('customer_top')
+                    <label for="Postal Code">Postal Code: </label>
+                    <input type="number" name="postal_code" min="1"
+                        class="w-full px-4 h-16 rounded-lg shadow-lg border-none py-5" required>
+                    @error('postal_code')
                         @include('components.form-error-message', ['message' => $message])
                     @enderror
                 </div>

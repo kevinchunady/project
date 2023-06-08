@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddRelationsToClientsTable extends Migration
+class AddRelationsToCustomersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddRelationsToClientsTable extends Migration
      */
     public function up()
     {
-        Schema::table('clients', function (Blueprint $table) {
-            $table->foreign('type_id')->references('id')->on('client_types')->onDelete('cascade')->onUpdate('cascade');
+        Schema::table('customers', function (Blueprint $table) {
+            $table->foreign('type_id')->references('id')->on('customer_types')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -25,8 +25,8 @@ class AddRelationsToClientsTable extends Migration
      */
     public function down()
     {
-        Schema::table('clients', function (Blueprint $table) {
-            $table->dropForeign('clients_type_id_foreign');
+        Schema::table('customers', function (Blueprint $table) {
+            $table->dropForeign('customers_type_id_foreign');
         });
     }
 }
