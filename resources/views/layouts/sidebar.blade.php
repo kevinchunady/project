@@ -14,19 +14,19 @@
                     <h2 class="font-normal text-base">Report</h2>
                 </button>
             </a>
-            <a class="{{ Route::is('products', 'add-product') ? 'bg-ccream transition-all duration-300 ease-in-out py-4' : 'hover:bg-ccream transition-all duration-300 ease-in-out py-4' }}" href="{{ route('products') }}">
+            <a class="{{ Route::is('products.index', 'products.create', 'products.edit') ? 'bg-ccream transition-all duration-300 ease-in-out py-4' : 'hover:bg-ccream transition-all duration-300 ease-in-out py-4' }}" href="{{ route('products.index') }}">
                 <button class="pl-10 flex flex-row items-center space-x-3 ">
                     <img src="{{ asset('images/products-logo.png') }}" alt="Product Logo" class="w-4 h-5">
                     <h2 class="font-normal text-base">Product</h2>
                 </button>
             </a>
-            <a class="{{ Route::is('customers', 'add-customer') ? 'bg-ccream transition-all duration-300 ease-in-out py-4' : 'hover:bg-ccream transition-all duration-300 ease-in-out py-4' }}" href="{{ route('customers') }}">
+            <a class="{{ Route::is('customers.index', 'customers.create', 'customers.edit') ? 'bg-ccream transition-all duration-300 ease-in-out py-4' : 'hover:bg-ccream transition-all duration-300 ease-in-out py-4' }}" href="{{ route('customers.index') }}">
                 <button class="pl-10 flex flex-row items-center space-x-3 ">
                     <img src="{{ asset('images/customers-logo.png') }}" alt="Customers Logo" class="w-4 h-5">
                     <h2 class="font-normal text-base">Customers</h2>
                 </button>
             </a>
-            <a class="{{ Route::is('users', 'add-user') ? 'bg-ccream transition-all duration-300 ease-in-out py-4' : 'hover:bg-ccream transition-all duration-300 ease-in-out py-4' }}" href="{{ route('users') }}">
+            <a class="{{ Route::is('users.index', 'users.create', 'users.edit') ? 'bg-ccream transition-all duration-300 ease-in-out py-4' : 'hover:bg-ccream transition-all duration-300 ease-in-out py-4' }}" href="{{ route('users.index') }}">
                 <button class="pl-10 flex flex-row items-center space-x-3 ">
                     <img src="{{ asset('images/users-logo.png') }}" alt="Users Logo" class="w-4 h-5">
                     <h2 class="font-normal text-base">Users</h2>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('layouts.header', ['link' => 'add-user' ,'string' => 'Add User'])
+    @include('layouts.header', ['link' => 'users.create' ,'string' => 'Add User'])
 
     <x-table>
         <x-slot name="header">
@@ -15,6 +15,9 @@
         </x-slot>
         <x-slot name="body">
             @foreach ($users as $user)
+                @if ($user->id % 2 == 0)
+                    
+                @endif
                 <tr>
                     <td class="py-6">{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
@@ -22,12 +25,16 @@
                     <td>{{ $user->role->name }}</td>
                     <td>
                         <div class="px-3 w-full flex flex-row items-center justify-center space-x-10">
-                            <a href="#">
+                            <a href="{{ route('users.edit', $user->id) }}">
                                 <img src="{{ asset('images/edit-logo.png') }}" alt="Edit Logo" class="w-5 h-5">
                             </a>
-                            <a href="#">
-                                <img src="{{ asset('images/trash-logo.png') }}" alt="Trash Logo" class="w-5 h-5">
-                            </a>
+                            <form action="{{ route('users.destroy', $user->id) }}" method="POST" class="mt-1">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit">
+                                    <img src="{{ asset('images/trash-logo.png') }}" alt="Trash Logo" class="w-5 h-5">
+                                </button>
+                            </form>
                         </div>
                     </td>
                 </tr>

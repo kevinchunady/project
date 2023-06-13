@@ -22,9 +22,15 @@ Route::get('/', function () {
 });
 
 Route::get('/reports', [ReportController:: class, 'read'])->name('reports');
-Route::get('/products', [ProductController:: class, 'read'])->name('products');
-Route::get('/customers', [CustomerController:: class, 'read'])->name('customers');
-Route::get('/users', [UserController:: class, 'read'])->name('users');
+Route::resources([
+    'products' => ProductController::class,
+]);
+Route::resources([
+    'customers' => CustomerController::class,
+]);
+Route::resources([
+    'users' => UserController::class,
+]);
 
 Route::prefix('insertion/')->group(function(){
     Route::get('/add-order', function () {
@@ -39,14 +45,6 @@ Route::prefix('insertion/')->group(function(){
     Route::get('/accounting', function () {
         return view('insertion.accounting');
     })->name('accounting');
-    Route::get('/add-product', function () {
-        return view('insertion.add-product');
-    })->name('add-product');
-    Route::post('/add-product', [ProductController::class, 'create']);
-    Route::get('/add-customer', [CustomerController::class, 'create'])->name('add-customer');
-    Route::post('/add-customer', [CustomerController::class, 'store']);
-    Route::get('/add-user', [UserController::class, 'create'])->name('add-user');
-    Route::post('/add-user', [UserController::class, 'store']);
 });
 
 require __DIR__.'/auth.php';

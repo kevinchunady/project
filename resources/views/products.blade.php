@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('layouts.header', ['link' => 'add-product', 'string' => 'Add Product'])
+    @include('layouts.header', ['link' => 'products.create', 'string' => 'Add Product'])
 
     <x-table>
         <x-slot name="header">
@@ -29,12 +29,16 @@
                         <td>{{ $product->weight }} kg</td>
                         <td>
                             <div class="px-3 w-full flex flex-row items-center justify-center space-x-10">
-                                <a href="#">
+                                <a href="{{ route('products.edit', $product->id) }}">
                                     <img src="{{ asset('images/edit-logo.png') }}" alt="Edit Logo" class="w-5 h-5">
                                 </a>
-                                <a href="#">
-                                    <img src="{{ asset('images/trash-logo.png') }}" alt="Trash Logo" class="w-5 h-5">
-                                </a>
+                                <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="mt-1">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit">
+                                        <img src="{{ asset('images/trash-logo.png') }}" alt="Trash Logo" class="w-5 h-5">
+                                    </button>
+                                </form>                                
                             </div>
                         </td>
                     </tr>
@@ -44,19 +48,23 @@
                         <td>{{ $product->name }}</td>
                         <td>
                             <div class="w-full flex flex-col items-center py-3">
-                                <img src="{{ asset($product->picture) }}" alt="Kacang Tanah" class="w-20 h-20">
+                                <img src="{{ asset('storage/'.$product->picture) }}" alt="Kacang Tanah" class="w-20 h-20">
                             </div>
                         </td>
                         <td>Rp {{ $product->price }}</td>
                         <td>{{ $product->weight }} kg</td>
                         <td>
                             <div class="px-3 w-full flex flex-row items-center justify-center space-x-10">
-                                <a href="#">
+                                <a href="{{ route('products.edit', $product->id) }}">
                                     <img src="{{ asset('images/edit-logo.png') }}" alt="Edit Logo" class="w-5 h-5">
                                 </a>
-                                <a href="#">
-                                    <img src="{{ asset('images/trash-logo.png') }}" alt="Trash Logo" class="w-5 h-5">
-                                </a>
+                                <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="mt-1">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit">
+                                        <img src="{{ asset('images/trash-logo.png') }}" alt="Trash Logo" class="w-5 h-5">
+                                    </button>
+                                </form>
                             </div>
                         </td>
                     </tr>
